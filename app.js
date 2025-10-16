@@ -6,6 +6,7 @@ import { updateTask } from "./functions/update.js";
 import { deleteTask } from './functions/delete.js';
 import { reader } from './functions/reader.js';
 import { saver } from './functions/saver.js';
+import { changeStatus } from './functions/changeStatus.js';
 
 const path = './tasks.json';
 const list = reader(path);
@@ -35,6 +36,13 @@ program
   .description('Deleta a task passada')
   .argument('<id>', 'id a ser removido')
   .action(id => saver(path, deleteTask(list,id)));
+
+program
+  .command('set-status')
+  .argument('<id>', 'id que será modificado')
+  .argument('<status>', 'status que será modificado')
+  .description('Atualiza o status de uma task')
+  .action((id,status) => saver(path, changeStatus(list,id,status)));
 
 program.parse()
 
