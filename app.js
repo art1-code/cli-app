@@ -44,5 +44,4 @@ program
   .description('Atualiza o status de uma task')
   .action((id,status) => saver(path, changeStatus(list,id,status)));
 
-program.parse()
-
+program.parse(process.argv);

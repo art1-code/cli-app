@@ -14,16 +14,15 @@ export function changeStatus(list, id, status) {
         newList[i].status = status;
         newList[i].updatedAt = Date.now();
         found = true;
+        console.log(`✅ Task changed successfully (ID${id})`);
         break;
       }
     }
 
     if (!found) {
       console.log(`❌ Task not found (ID${id})`);
-      return newList;
     }
 
-    console.log(`✅ Task changed successfully (ID${id})`);
     return newList;
   } catch (error) {
     console.log(`❌ Failed to change the status of task (ID${id}) - ${error}`);
