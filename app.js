@@ -7,6 +7,7 @@ import { deleteTask } from './functions/delete.js';
 import { reader } from './functions/reader.js';
 import { saver } from './functions/saver.js';
 import { changeStatus } from './functions/changeStatus.js';
+import { listAllTasks } from './functions/listAll.js';
 
 const path = './tasks.json';
 const list = reader(path);
@@ -43,5 +44,10 @@ program
   .argument('<status>', 'status que será modificado')
   .description('Atualiza o status de uma task')
   .action((id,status) => saver(path, changeStatus(list,id,status)));
+
+program
+  .command('list-all')
+  .description('Lista todas as tarefas')
+  .action(() => listAllTasks(list))
 
 program.parse(process.argv);
