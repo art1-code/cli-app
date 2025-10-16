@@ -8,7 +8,7 @@ export function addTask(list,data) {
         'id': nextID + 1,
         'description' : data,
         'status': Status.PENDENTE,
-        'createAt': Date.now(),
+        'createdAt': Date.now(),
         'updatedAt':Date.now(),
       });
       console.log(`✅ Task added successfully (ID${nextID + 1})`);

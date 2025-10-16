@@ -36,5 +36,5 @@ program
   .argument('<id>', 'id a ser removido')
   .action(id => saver(path, deleteTask(list,id)));
 
-
+program.parse()
 
