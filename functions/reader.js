@@ -1,6 +1,6 @@
-import { readFileSync } from "fs";
+import fs from "fs";
 
 export function reader(path) {
-  const content = readFileSync(path, 'utf-8');
+  const content = fs.readFileSync(path, 'utf-8');
   return JSON.parse(content);
 };

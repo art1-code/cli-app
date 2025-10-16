@@ -10,6 +10,7 @@ import { changeStatus } from './functions/changeStatus.js';
 import { listAllTasks } from './functions/listAll.js';
 
 const path = './tasks.json';
+
 const list = reader(path);
 
 const program = new Command();
